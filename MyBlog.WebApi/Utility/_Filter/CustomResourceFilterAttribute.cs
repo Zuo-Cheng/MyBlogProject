@@ -40,9 +40,14 @@ namespace MyBlog.WebApi.Utility._Filter
         {
             string path = context.HttpContext.Request.Path;
             string param = context.HttpContext.Request.QueryString.Value;
+            //已请求路径为地址作为key，这样在分页的时候也可以明确的拿到指定页的数据
+            //不然的话只能拿到第一页的数据
+            //在数据更新的时候，一并更新缓存中的数据，也可以通过这种路径的方式进行更新
             string key = path + param;
+            //判断缓存是否有指定的key
             if(_memoryCache.TryGetValue(key,out object value))
             {
+                //有的话取出数据，返回请求结果
                 context.Result = value as IActionResult;
             }
         }
