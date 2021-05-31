@@ -21,7 +21,7 @@ namespace MyBlog.WebApi
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     //配置不包含TLS的HTTP/2终结点
-                    webBuilder.ConfigureKestrel(options =>
+                     webBuilder.ConfigureKestrel(options =>
                     {
                         options.ListenLocalhost(5000, a => a.Protocols =
                                 Microsoft.AspNetCore.Server.Kestrel.Core.HttpProtocols.Http2);
