@@ -90,6 +90,9 @@ namespace MyBlog.WebApi
             #region AutoMapper
             services.AddAutoMapper(typeof(CustomAutoMapperProfile));
             #endregion
+
+
+            services.AddMemoryCache();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -114,6 +117,7 @@ namespace MyBlog.WebApi
             {
                 endpoints.MapControllers();
             });
+
         }
 
     }

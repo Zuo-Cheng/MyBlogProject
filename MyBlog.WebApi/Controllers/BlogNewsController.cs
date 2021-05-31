@@ -82,8 +82,15 @@ namespace MyBlog.WebApi.Controllers
         {
             RefAsync<int> total = 0;
             var blogNewsList = await _blogNewsService.QueryAllAsync(pageIndex, pageSize, total);
-            var blogNewsListDTO =  impper.Map<List<BlogNewsDTO>>(blogNewsList);
-            return ApiResultHelper.Success(blogNewsListDTO);
+            try
+            {
+                var blogNewsListDTO = impper.Map<List<BlogNewsDTO>>(blogNewsList);
+                return ApiResultHelper.Success(blogNewsListDTO,total);
+            }
+            catch(Exception e)
+            {
+                return ApiResultHelper.Error(e.Message);
+            }
         }
     }
 }

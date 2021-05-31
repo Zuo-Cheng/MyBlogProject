@@ -1,11 +1,9 @@
-﻿{
+{
   "Logging": {
     "LogLevel": {
       "Default": "Information",
       "Microsoft": "Warning",
       "Microsoft.Hosting.Lifetime": "Information"
     }
-  },
-  "AllowedHosts": "*"
-  //"SqlConn": "server=112.74.53.97;uid=sa;pwd=ACxiaozu123;Database=MyBlogDB;Trusted_Connection=true;"
+  }
 }

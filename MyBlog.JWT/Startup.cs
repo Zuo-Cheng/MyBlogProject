@@ -49,6 +49,7 @@ namespace MyBlog.JWT
             #endregion
             services.AddScoped<IAuthorInfoRepository, AuthorInfoRepository>();
             services.AddScoped<IAuthorInfoService, AuthorInfoService>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
